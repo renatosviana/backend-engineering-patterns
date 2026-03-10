@@ -1,7 +1,7 @@
-package prepjavaafterselfevaluationon03mar2026.sevendays03marto09mar.mar092026;
+package backendpatterns.mar092026;
 
-import prepjavaafterselfevaluationon03mar2026.sevendays03marto09mar.mar092026.repository.EmployeeRepository;
-import prepjavaafterselfevaluationon03mar2026.sevendays03marto09mar.mar092026.repository.impl.InMemoryEmployeeRepositoryImpl;
+import backendpatterns.mar092026.repository.EmployeeRepository;
+import backendpatterns.mar092026.repository.impl.InMemoryEmployeeRepositoryImpl;
 
 
 import java.util.Map;
@@ -27,7 +27,7 @@ public class ThreadTest {
             executor.submit(() -> {
                 for (int i = 0; i < itemsPerThread; i++) {
                     int key = threadId * itemsPerThread + i;
-                    prepjavaafterselfevaluationon03mar2026.sevendays03marto09mar.mar092026.Employee e = new prepjavaafterselfevaluationon03mar2026.sevendays03marto09mar.mar092026.Employee(key, "Emp" + key, 1000 + key);
+                    Employee e = new Employee(key, "Emp" + key, 1000 + key);
                     repo.addEmployee(e);
                 }
             });
