@@ -1,4 +1,4 @@
-package backendpatterns.mar092026;
+package backendpatterns.v1;
 
 public class Employee {
     private int id;
