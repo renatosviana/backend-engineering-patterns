@@ -1,6 +1,6 @@
-package prepjavaafterselfevaluationon03mar2026.sevendays03marto09mar.mar092026.repository;
+package backendpatterns.mar092026.repository;
 
-import prepjavaafterselfevaluationon03mar2026.sevendays03marto09mar.mar092026.Employee;
+import backendpatterns.mar092026.Employee;
 
 import java.util.List;
 
