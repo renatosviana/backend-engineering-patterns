@@ -1,8 +1,8 @@
-package backendpatterns.mar092026;
+package backendpatterns.v1;
 
-import backendpatterns.mar092026.repository.impl.InMemoryEmployeeRepositoryImpl;
-import backendpatterns.mar092026.repository.EmployeeRepository;
-import backendpatterns.mar092026.service.EmployeeManagerService;
+import backendpatterns.v1.repository.impl.InMemoryEmployeeRepositoryImpl;
+import backendpatterns.v1.repository.EmployeeRepository;
+import backendpatterns.v1.service.EmployeeManagerService;
 
 public class ConsoleClient {
     public static void main(String [] args) {
