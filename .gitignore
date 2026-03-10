@@ -1,0 +1,33 @@
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Build output
+out/
+target/
+build/
+
+# Compiled Java
+*.class
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gradle
+.gradle/
+
+# Maven
+.mvn/
+
+# Environment
+.env
+
+# Temporary files
+*.tmp
+*.swp
