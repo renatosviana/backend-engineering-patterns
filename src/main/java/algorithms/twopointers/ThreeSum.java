@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
-//28.April.2026 -- 6:14am - 7:34am
-//29.April.2026 -- Done in LeetCode directly and failed with edge cases
-//30.April.2026 -- 6:37am - 8:33am add duplicate handling and edge cases for 3Sum; fix flipped sum comparison
+// Practice log:
+//28.April.2026 6:14am - 7:34am     Initial implementation
+//29.April.2026                     Done in LeetCode directly and failed with edge cases
+//30.April.2026 6:37am - 8:33am     Add duplicate handling and edge cases for 3Sum; fix flipped sum comparison
+//04.May.2026   6:22am - 8:45am     Documented formula and reduction to Two Sum
+//
 //TODO: skip duplicate left/right values after recording a triplet to avoid adding the same triplet multiple times on inputs
+//
+// Two Sum:  x + y = target
+// 3Sum:     x + y + z = 0  →  y + z = -x   (Two Sum with target = -x; target 0 is implicit)
+//           where x = nums[i] is the fixed anchor,
+//                 y = nums[left], z = nums[right]
 public class ThreeSum {
 
     public static void main(String [] args) {
@@ -24,7 +32,8 @@ public class ThreeSum {
         Arrays.sort(nums);
 
         for (int i=0;i<nums.length;i++) {
-            if (i > 0 && nums[i] == nums[i-1]) continue;
+            if (i > 0 && nums[i] == nums[i-1])
+               continue;
 
 
             int left = i+1;
