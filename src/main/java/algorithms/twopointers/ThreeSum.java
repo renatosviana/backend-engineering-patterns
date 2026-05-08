@@ -4,18 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
-// Practice log:
-//28.April.2026 6:14am - 7:34am     Initial implementation
-//29.April.2026                     Done in LeetCode directly and failed with edge cases
-//30.April.2026 6:37am - 8:33am     Add duplicate handling and edge cases for 3Sum; fix flipped sum comparison
-//04.May.2026   6:22am - 8:45am     Documented formula and reduction to Two Sum
-//
-//TODO: skip duplicate left/right values after recording a triplet to avoid adding the same triplet multiple times on inputs
-//
-// Two Sum:  x + y = target
-// 3Sum:     x + y + z = 0  →  y + z = -x   (Two Sum with target = -x; target 0 is implicit)
-//           where x = nums[i] is the fixed anchor,
-//                 y = nums[left], z = nums[right]
+// Two Sum - HashMap version (unsorted):    x + y = target (x = target - y, I have seen target - y before? for each y)
+// 3Sum    - Two-pointer version (sorted):  x + y + z = 0  →  y + z = -x   (Two Sum with target = -x; target 0 is implicit)
+//                                          where x = nums[i] is the fixed anchor,
+//                                          y = nums[left], z = nums[right]
+//                                          start left/right at the ends, then move them toward each other
+//                                          no memory needed; sorting gives direction
 public class ThreeSum {
 
     public static void main(String [] args) {
@@ -35,10 +29,10 @@ public class ThreeSum {
             if (i > 0 && nums[i] == nums[i-1])
                continue;
 
-
             int left = i+1;
             int right = nums.length - 1;
 
+            //basically here it says that left pointer cannot be greater than right, because then it will be out of bond
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
 
@@ -46,6 +40,8 @@ public class ThreeSum {
                     triplets.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     left++;
                     right--;
+                    while (left < right && nums[left] == nums[left-1]) left++;
+                    while (left < right && nums[right] == nums[right+1]) right--;
                 } else if (sum > 0) {
                     right--;
                 } else {
